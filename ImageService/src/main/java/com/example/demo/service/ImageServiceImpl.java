@@ -20,15 +20,12 @@ public class ImageServiceImpl implements ImageService {
 		super();
 		this.imageDao = imageDao;
 	}
-
 	@Override
 	@Transactional
 	public Iterable<Image> getAllImage() {
 	
 		return imageDao.findAll();
-
 	}
-
 	@Override
 	@Transactional
 	public Optional<Image> createImage(Image image) {
@@ -36,5 +33,4 @@ public class ImageServiceImpl implements ImageService {
 		imageDao.save(image);
 		return Optional.of(image);
 	}
-
 }
